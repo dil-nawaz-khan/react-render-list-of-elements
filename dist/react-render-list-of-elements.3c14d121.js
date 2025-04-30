@@ -735,7 +735,7 @@ function Card(key, image, title, subTitle, price) {
     }, this);
 }
 _c = Card;
-fetch('https://dummyjson.com/products/category/smartphones').then((res)=>res.json()).then((data)=>{
+fetch("https://dummyjson.com/products/category/smartphones").then((res)=>res.json()).then((data)=>{
     console.log(data);
     const container2 = data.products.map((pro)=>{
         return Card(pro.id, pro.images[0], pro.title, pro.brand, pro.price);
@@ -746,7 +746,7 @@ fetch('https://dummyjson.com/products/category/smartphones').then((res)=>res.jso
         children: container2
     }, void 0, false, {
         fileName: "script.js",
-        lineNumber: 30,
+        lineNumber: 28,
         columnNumber: 17
     }, undefined));
 }); // const container = [Card(1), Card(2), Card(3), Card(4), Card(5)];
