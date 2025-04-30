@@ -1,0 +1,29 @@
+.card {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.card img {
+  object-fit: contain;
+  width: 100%;
+  max-width: 150px;
+}
+
+.card h3, .card p {
+  margin: 6px 0;
+}
+
+.card-content {
+  padding: 0 10px;
+}
+
+.container {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+/*# sourceMappingURL=react-render-list-of-elements.aa436662.css.map */

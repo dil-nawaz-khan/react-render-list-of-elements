@@ -1,0 +1,31 @@
+.card {
+  width: 200px;
+  
+  border: 1px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+    object-fit: contain;
+    width: 100%;
+    max-width: 150px;
+}
+
+.card h3, .card p {
+    margin: 0;
+    margin: 6px 0;
+}
+
+.card-content {
+    padding: 0 10px;
+}
+
+.container {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
