@@ -674,11 +674,14 @@ var prevRefreshSig = globalThis.$RefreshSig$;
 $parcel$ReactRefreshHelpers$a0da.prelude(module);
 
 try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _styleCss = require("./style.css");
 function Card(props) {
-    const { key, image, title, subTitle, price } = props;
+    const { image, title, subTitle, price } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
@@ -686,7 +689,7 @@ function Card(props) {
                 src: image
             }, void 0, false, {
                 fileName: "script.js",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -696,14 +699,14 @@ function Card(props) {
                         children: title
                     }, void 0, false, {
                         fileName: "script.js",
-                        lineNumber: 11,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: subTitle
                     }, void 0, false, {
                         fileName: "script.js",
-                        lineNumber: 12,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -714,50 +717,97 @@ function Card(props) {
                             ]
                         }, void 0, true, {
                             fileName: "script.js",
-                            lineNumber: 14,
+                            lineNumber: 15,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "script.js",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "script.js",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 7
             }, this)
         ]
-    }, key, true, {
+    }, void 0, true, {
         fileName: "script.js",
-        lineNumber: 8,
+        lineNumber: 9,
         columnNumber: 5
     }, this);
 }
 _c = Card;
+// fetch("https://dummyjson.com/products/category/smartphones")
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data);
+//     const container2 = data.products.map((pro) => {
+//       return Card({
+//         key: pro.id,
+//         image: pro.images[0],
+//         title: pro.title,
+//         subTitle: pro.brand,
+//         price: pro.price,
+//       });
+//     });
+//     const root = createRoot(document.getElementById("root"));
+//     root.render(<div className="container">{container2}</div>);
+//   });
+// const container = [Card(1), Card(2), Card(3), Card(4), Card(5)];
+// console.log("Hello world!!!");
+const root = (0, _client.createRoot)(document.getElementById("root"));
+// root.render({
+//   $$typeof: Symbol.for("react.element"),
+//   type: Card,
+//   ref: null,
+//   props: {
+//     image:
+//       "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp",
+//     title: "iPhone 13",
+//     key: 1,
+//     subTitle: "New Version",
+//     price: 1100,
+//   },
+// });
+// root.render(React.createElement(Card, {
+//   image:
+//     "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp",
+//   title: "iPhone 13",
+//   key: 1,
+//   subTitle: "New Version",
+//   price: 1100,
+// }))
+// root.render(
+//   <Card
+//     title="iPhone 12"
+//     image="https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp"
+//     brand="Apple"
+//     price={1100}
+//   />
+// );
 fetch("https://dummyjson.com/products/category/smartphones").then((res)=>res.json()).then((data)=>{
-    console.log(data);
-    const container2 = data.products.map((pro)=>{
-        return Card({
-            key: pro.id,
-            image: pro.images[0],
-            title: pro.title,
-            subTitle: pro.brand,
-            price: pro.price
-        });
-    });
-    const root = (0, _client.createRoot)(document.getElementById("root"));
     root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "container",
-        children: container2
+        children: data.products.map((product)=>{
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Card, {
+                title: product.title,
+                image: product.images[0],
+                subTitle: product.brand,
+                price: product.price
+            }, product.id, false, {
+                fileName: "script.js",
+                lineNumber: 82,
+                columnNumber: 13
+            }, undefined);
+        })
     }, void 0, false, {
         fileName: "script.js",
-        lineNumber: 35,
-        columnNumber: 17
+        lineNumber: 79,
+        columnNumber: 7
     }, undefined));
-}); // const container = [Card(1), Card(2), Card(3), Card(4), Card(5)];
- // console.log("Hello world!!!");
+});
 var _c;
 $RefreshReg$(_c, "Card");
 
@@ -766,7 +816,7 @@ $RefreshReg$(_c, "Card");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-dom/client":"hrvwu","./style.css":"dRy26","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react-dom/client":"hrvwu","./style.css":"dRy26","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
