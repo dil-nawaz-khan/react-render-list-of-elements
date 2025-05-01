@@ -2,7 +2,8 @@ import { createRoot } from "react-dom/client";
 
 import "./style.css";
 
-function Card(key, image, title, subTitle, price) {
+function Card(props) {
+  const { key, image, title, subTitle, price } = props;
   return (
     <div key={key} className="card">
       <img src={image} />
@@ -22,7 +23,13 @@ fetch("https://dummyjson.com/products/category/smartphones")
   .then((data) => {
     console.log(data);
     const container2 = data.products.map((pro) => {
-      return Card(pro.id, pro.images[0], pro.title, pro.brand, pro.price);
+      return Card({
+        key: pro.id,
+        image: pro.images[0],
+        title: pro.title,
+        subTitle: pro.brand,
+        price: pro.price,
+      });
     });
     const root = createRoot(document.getElementById("root"));
     root.render(<div className="container">{container2}</div>);

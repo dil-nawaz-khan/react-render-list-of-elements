@@ -677,7 +677,8 @@ try {
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _styleCss = require("./style.css");
-function Card(key, image, title, subTitle, price) {
+function Card(props) {
+    const { key, image, title, subTitle, price } = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
@@ -685,7 +686,7 @@ function Card(key, image, title, subTitle, price) {
                 src: image
             }, void 0, false, {
                 fileName: "script.js",
-                lineNumber: 8,
+                lineNumber: 9,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -695,14 +696,14 @@ function Card(key, image, title, subTitle, price) {
                         children: title
                     }, void 0, false, {
                         fileName: "script.js",
-                        lineNumber: 10,
+                        lineNumber: 11,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: subTitle
                     }, void 0, false, {
                         fileName: "script.js",
-                        lineNumber: 11,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -713,24 +714,24 @@ function Card(key, image, title, subTitle, price) {
                             ]
                         }, void 0, true, {
                             fileName: "script.js",
-                            lineNumber: 13,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "script.js",
-                        lineNumber: 12,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "script.js",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 7
             }, this)
         ]
     }, key, true, {
         fileName: "script.js",
-        lineNumber: 7,
+        lineNumber: 8,
         columnNumber: 5
     }, this);
 }
@@ -738,7 +739,13 @@ _c = Card;
 fetch("https://dummyjson.com/products/category/smartphones").then((res)=>res.json()).then((data)=>{
     console.log(data);
     const container2 = data.products.map((pro)=>{
-        return Card(pro.id, pro.images[0], pro.title, pro.brand, pro.price);
+        return Card({
+            key: pro.id,
+            image: pro.images[0],
+            title: pro.title,
+            subTitle: pro.brand,
+            price: pro.price
+        });
     });
     const root = (0, _client.createRoot)(document.getElementById("root"));
     root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -746,7 +753,7 @@ fetch("https://dummyjson.com/products/category/smartphones").then((res)=>res.jso
         children: container2
     }, void 0, false, {
         fileName: "script.js",
-        lineNumber: 28,
+        lineNumber: 35,
         columnNumber: 17
     }, undefined));
 }); // const container = [Card(1), Card(2), Card(3), Card(4), Card(5)];
@@ -759,7 +766,7 @@ $RefreshReg$(_c, "Card");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-dom/client":"hrvwu","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./style.css":"dRy26"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react-dom/client":"hrvwu","./style.css":"dRy26","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -25002,7 +25009,7 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === 'function') __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"7h6Pi":[function(require,module,exports,__globalThis) {
+},{}],"dRy26":[function() {},{}],"7h6Pi":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -27310,6 +27317,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"dRy26":[function() {},{}]},["n0fw4","kTBnD"], "kTBnD", "parcelRequire3357", {}, null, null, "http://localhost:1234")
+},{}]},["n0fw4","kTBnD"], "kTBnD", "parcelRequire3357", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=react-render-list-of-elements.3c14d121.js.map
